@@ -46,6 +46,15 @@ const disconnect = () => {
     console.log("Observer dissconected")
 }
 
-const mo = new MutationObserver(onMutation);
+const active = false;
 
-observe();
+const toggle = () => {
+  if (active) {
+    disconnect();
+  }
+  else {
+    observe();
+  }
+}
+
+const mo = new MutationObserver(onMutation);
